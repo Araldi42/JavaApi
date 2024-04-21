@@ -1,5 +1,6 @@
 package com.example.apiproject.services;
 
+import com.example.apiproject.controllers.HolidayController;
 import com.example.apiproject.domain.Holiday;
 import com.example.apiproject.feign.HolidayClient;
 import org.springframework.stereotype.Service;
@@ -15,8 +16,8 @@ public class HolidayService {
         this.holidayClient = client;
     }
 
-    public List<Holiday> getHolidaysFromWeb(){
-        return this.holidayClient.getHolidays();
+    public List<Holiday> getHolidaysFromWeb(int year){
+        return this.holidayClient.getHolidays(year);
 
     }
 }
